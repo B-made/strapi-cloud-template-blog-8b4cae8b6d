@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_preperation_steps",
+  "info": {
+    "displayName": "preperationStep",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_episode_extra_content_nutrition_values",
+  "info": {
+    "displayName": "Nutrition Values",
+    "icon": "seed"
+  },
+  "options": {},
+  "attributes": {
+    "carbohydrates": {
+      "type": "integer"
+    },
+    "calories": {
+      "type": "integer"
+    },
+    "proteins": {
+      "type": "integer"
+    },
+    "fats": {
+      "type": "integer"
+    }
+  }
+}

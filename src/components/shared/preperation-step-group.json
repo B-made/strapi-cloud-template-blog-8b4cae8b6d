@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_preperation_step_groups",
+  "info": {
+    "displayName": "preperationStepGroup",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "groupTitle": {
+      "type": "string"
+    },
+    "preperationSteps": {
+      "displayName": "preperationStep",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.preperation-step"
+    }
+  }
+}
