@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_screen_content_continue_watchings",
+  "info": {
+    "displayName": "Continue Watching",
+    "icon": "rotate"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

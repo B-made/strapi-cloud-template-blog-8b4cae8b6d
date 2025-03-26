@@ -62,6 +62,16 @@
           "localized": true
         }
       }
+    },
+    "episodeNumber": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "min": 1,
+      "type": "integer"
     }
   }
 }

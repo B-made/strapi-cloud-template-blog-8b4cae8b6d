@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_screen_content_series_lists",
+  "info": {
+    "displayName": "Series List",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "series": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::serie.serie"
+    }
+  }
+}

@@ -425,6 +425,19 @@ export interface ApiEpisodeEpisode extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    episodeNumber: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -569,6 +582,63 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiScreenScreen extends Struct.CollectionTypeSchema {
+  collectionName: 'screens';
+  info: {
+    description: '';
+    displayName: 'Screens';
+    pluralName: 'screens';
+    singularName: 'screen';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::screen.screen'>;
+    publishedAt: Schema.Attribute.DateTime;
+    screenType: Schema.Attribute.Enumeration<['home']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'screen-content.series-list',
+        'screen-content.recommended-series',
+        'screen-content.episodes-list',
+        'screen-content.continue-watching',
+        'screen-content.category-list',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSerieSerie extends Struct.CollectionTypeSchema {
   collectionName: 'series';
   info: {
@@ -634,6 +704,10 @@ export interface ApiSerieSerie extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    trailer: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::mux-video-uploader.mux-asset'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1261,6 +1335,7 @@ declare module '@strapi/strapi' {
       'api::episode.episode': ApiEpisodeEpisode;
       'api::global.global': ApiGlobalGlobal;
       'api::recipe.recipe': ApiRecipeRecipe;
+      'api::screen.screen': ApiScreenScreen;
       'api::serie.serie': ApiSerieSerie;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

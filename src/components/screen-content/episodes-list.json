@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_screen_content_episodes_lists",
+  "info": {
+    "displayName": "Episodes List",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "episodes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::episode.episode"
+    }
+  }
+}

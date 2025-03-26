@@ -26,6 +26,64 @@ export interface EpisodeExtraContentTextSection extends Struct.ComponentSchema {
   };
 }
 
+export interface ScreenContentCategoryList extends Struct.ComponentSchema {
+  collectionName: 'components_screen_content_category_lists';
+  info: {
+    displayName: 'Category List';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ScreenContentContinueWatching extends Struct.ComponentSchema {
+  collectionName: 'components_screen_content_continue_watchings';
+  info: {
+    displayName: 'Continue Watching';
+    icon: 'rotate';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ScreenContentEpisodesList extends Struct.ComponentSchema {
+  collectionName: 'components_screen_content_episodes_lists';
+  info: {
+    displayName: 'Episodes List';
+    icon: 'bulletList';
+  };
+  attributes: {
+    episodes: Schema.Attribute.Relation<'oneToMany', 'api::episode.episode'>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ScreenContentRecommendedSeries extends Struct.ComponentSchema {
+  collectionName: 'components_screen_content_recommended_series';
+  info: {
+    description: '';
+    displayName: 'Recommended Series';
+    icon: 'bulletList';
+  };
+  attributes: {};
+}
+
+export interface ScreenContentSeriesList extends Struct.ComponentSchema {
+  collectionName: 'components_screen_content_series_lists';
+  info: {
+    displayName: 'Series List';
+    icon: 'bulletList';
+  };
+  attributes: {
+    series: Schema.Attribute.Relation<'oneToMany', 'api::serie.serie'>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedIngredient extends Struct.ComponentSchema {
   collectionName: 'components_shared_ingredients';
   info: {
@@ -134,6 +192,11 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'episode-extra-content.nutrition-values': EpisodeExtraContentNutritionValues;
       'episode-extra-content.text-section': EpisodeExtraContentTextSection;
+      'screen-content.category-list': ScreenContentCategoryList;
+      'screen-content.continue-watching': ScreenContentContinueWatching;
+      'screen-content.episodes-list': ScreenContentEpisodesList;
+      'screen-content.recommended-series': ScreenContentRecommendedSeries;
+      'screen-content.series-list': ScreenContentSeriesList;
       'shared.ingredient': SharedIngredient;
       'shared.media': SharedMedia;
       'shared.preperation-step': SharedPreperationStep;

@@ -87,6 +87,11 @@
         }
       },
       "type": "string"
+    },
+    "trailer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::mux-video-uploader.mux-asset"
     }
   }
 }

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "screens",
+  "info": {
+    "singularName": "screen",
+    "pluralName": "screens",
+    "displayName": "Screens",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "screenType": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "home"
+      ],
+      "required": true
+    },
+    "sections": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "screen-content.series-list",
+        "screen-content.recommended-series",
+        "screen-content.episodes-list",
+        "screen-content.continue-watching",
+        "screen-content.category-list"
+      ],
+      "min": 1,
+      "required": true
+    }
+  }
+}
