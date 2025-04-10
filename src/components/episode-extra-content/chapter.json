@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_episode_extra_content_chapters",
+  "info": {
+    "displayName": "chapter",
+    "icon": "oneToOne",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "startTime": {
+      "type": "integer",
+      "required": true
+    },
+    "endTime": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "infoText": {
+      "type": "text"
+    }
+  }
+}

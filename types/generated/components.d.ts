@@ -1,5 +1,21 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface EpisodeExtraContentChapter extends Struct.ComponentSchema {
+  collectionName: 'components_episode_extra_content_chapters';
+  info: {
+    description: '';
+    displayName: 'chapter';
+    icon: 'oneToOne';
+  };
+  attributes: {
+    endTime: Schema.Attribute.Integer;
+    infoText: Schema.Attribute.Text;
+    startTime: Schema.Attribute.Integer & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface EpisodeExtraContentNutritionValues
   extends Struct.ComponentSchema {
   collectionName: 'components_episode_extra_content_nutrition_values';
@@ -190,6 +206,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'episode-extra-content.chapter': EpisodeExtraContentChapter;
       'episode-extra-content.nutrition-values': EpisodeExtraContentNutritionValues;
       'episode-extra-content.text-section': EpisodeExtraContentTextSection;
       'screen-content.category-list': ScreenContentCategoryList;

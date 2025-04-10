@@ -415,6 +415,15 @@ export interface ApiEpisodeEpisode extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    chapterList: Schema.Attribute.Component<
+      'episode-extra-content.chapter',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
