@@ -82,6 +82,17 @@
         }
       },
       "component": "episode-extra-content.chapter"
+    },
+    "lessonsLearned": {
+      "displayName": "Lessons Learned",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "episode-extra-content.lessons-learned"
     }
   }
 }

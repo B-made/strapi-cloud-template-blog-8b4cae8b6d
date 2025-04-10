@@ -447,6 +447,15 @@ export interface ApiEpisodeEpisode extends Struct.CollectionTypeSchema {
         },
         number
       >;
+    lessonsLearned: Schema.Attribute.Component<
+      'episode-extra-content.lessons-learned',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

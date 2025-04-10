@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_episode_extra_content_lessons_learneds",
+  "info": {
+    "displayName": "Lessons Learned",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.preperation-step"
+    },
+    "summary": {
+      "type": "component",
+      "repeatable": false,
+      "component": "episode-extra-content.text-section"
+    }
+  }
+}

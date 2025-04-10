@@ -16,6 +16,23 @@ export interface EpisodeExtraContentChapter extends Struct.ComponentSchema {
   };
 }
 
+export interface EpisodeExtraContentLessonsLearned
+  extends Struct.ComponentSchema {
+  collectionName: 'components_episode_extra_content_lessons_learneds';
+  info: {
+    displayName: 'Lessons Learned';
+    icon: 'bulletList';
+  };
+  attributes: {
+    steps: Schema.Attribute.Component<'shared.preperation-step', true>;
+    summary: Schema.Attribute.Component<
+      'episode-extra-content.text-section',
+      false
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface EpisodeExtraContentNutritionValues
   extends Struct.ComponentSchema {
   collectionName: 'components_episode_extra_content_nutrition_values';
@@ -207,6 +224,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'episode-extra-content.chapter': EpisodeExtraContentChapter;
+      'episode-extra-content.lessons-learned': EpisodeExtraContentLessonsLearned;
       'episode-extra-content.nutrition-values': EpisodeExtraContentNutritionValues;
       'episode-extra-content.text-section': EpisodeExtraContentTextSection;
       'screen-content.category-list': ScreenContentCategoryList;
