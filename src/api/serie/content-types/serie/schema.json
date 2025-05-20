@@ -92,6 +92,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::mux-video-uploader.mux-asset"
+    },
+    "creators": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::creator.creator"
     }
   }
 }
